@@ -1,7 +1,7 @@
 body{
     background-color:#FFFFEE;
 }
-a,a:visited{
+p,a,a:visited{
     color:#000033;
     text-decoration: none;
     font-family: sans-serif;
