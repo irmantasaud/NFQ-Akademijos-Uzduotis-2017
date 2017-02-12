@@ -16,7 +16,7 @@
         $queryResult = mysqli_query($conn,$querySelBooks);
         while(($data = mysqli_fetch_assoc($queryResult)))
         {
-            echo('<ul><a href="content.php/book='.$data[book_id].'">'.$data[book_name] .'</a></ul>');
+            echo('<ul><a href="content.php?book='.$data[book_id].'">'.$data[book_name] .'</a></ul>');
             echo '<hr>';
 
         }
