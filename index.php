@@ -12,11 +12,11 @@
             echo "MYSQL Connection failed: " . mysqli_connect_error();
             exit();
         }
-        $querySelBooks = "SELECT `book_name` FROM `books` ";
+        $querySelBooks = "SELECT `book_id` ,`book_name` FROM `books`";
         $queryResult = mysqli_query($conn,$querySelBooks);
         while(($data = mysqli_fetch_assoc($queryResult)))
         {
-            echo('<li><a href="">'.$data[book_name] .'</a></li>');
+            echo('<ul><a href="content.php/book='.$data[book_id].'">'.$data[book_name] .'</a></ul>');
             echo '<hr>';
 
         }
