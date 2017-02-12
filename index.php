@@ -4,15 +4,16 @@
     <title>NFQ Akademijos 2017 Užduotis</title>
 </head>
 <body>
+    <link href="css/main.css" rel="stylesheet" type="text/css" >
     <?php
         require('/includes/db_conn.php');
         echo "<form method = 'get' action = 'index.php'>
-                <input type='textbox' name='search' placeholder='Įveskite knygos pavadinimą'>
+                <input type='textbox' name='search' class='search' placeholder='Įveskite knygos pavadinimą'>
                 <br />
                 <input type='radio' name='sortByName'>Rikiuoti pagal Pavadinimą (A-Z)
                 <input type='radio' name='sortByDate'> Rikiuoti Pagal išleidimo datą (Naujausias-Seniausias)
                 <br />
-                <input type='submit' name='searchBtn' value='Paieška'>
+                <input type='submit' name='searchBtn' class='btnSearch' value='Paieška'>
                 </form>"; //formuojamas paieskos laukas ir pasirinkimai rikiavimo
         $conn = mysqli_connect($db_host,$db_user,$db_pass,$db_name); // prisijungimo prie db uzklausa
         if ($_GET['search']==NULL) // Tikrinam ar yra kas nors ivesta i paieskos lauka, jeigu ne vykdoma sita dalis
@@ -26,12 +27,15 @@
 
             $querySelBooks = "SELECT `book_id` ,`book_name` FROM `books` "; // selectinami duomenys is duombazes visam atvaizdavimui
             $queryResult = mysqli_query($conn,$querySelBooks);
+
             while(($data = mysqli_fetch_assoc($queryResult)))
             {
+
                 echo('<ul><a href="content.php?book='.$data[book_id].'">'.$data[book_name] .'</a></ul>'); // atvaizduojami duomenys nuorodu pavidalu
                 echo '<hr>';
-
             }
+
+
         }
         else if ($_GET['search'] != NULL) // jeigu yra ivesta i paieskos lauka
         {
@@ -53,7 +57,7 @@
             $queryResult = mysqli_query($conn,$querySelBooks);// vykdoma uzklausa
             while(($data = mysqli_fetch_assoc($queryResult)))
             {
-                echo('<ul><a href="content.php?book='.$data[book_id].'">'.$data[book_name] .'</a></ul>'); //atvaizduojami duomenys nuorodu pavidalu
+                echo('<ul><a href="content.php?book='.$data[book_id].'">'.$data[book_name] . '"class="book"></a></ul>'); //atvaizduojami duomenys nuorodu pavidalu
                 echo '<hr>';
 
             }

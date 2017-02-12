@@ -1,0 +1,28 @@
+body{
+    background-color:#FFFFEE;
+}
+a,a:visited{
+    color:#000033;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+a:hover{
+    color:#6666FF;
+    text-decoration: underline;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+hr{
+    border:2px;
+    border-style: solid;
+    border-color:#FEFFD0;
+}
+.search{
+    width:225px;
+}
+.btnSearch{
+    background-color: orange;
+    color:white;
+    border:1px;
+    border-color
+}
