@@ -17,7 +17,7 @@
         $result = mysqli_query($conn,$query);
         $data = mysqli_fetch_assoc($result);
         echo "Knygos autorius: " . $data['book_author'] . "<br />" . "Knygos pavadinimas: " .$data['book_name'] . "<br />" . "Išleidimo metai: " . $data['publishYear'] . "<br />" . " Knygos žanras: " . $data['book_genre'] . "<br />"  ;
-        echo "<a href= 'index.php' > Atgal </a>"
+        echo "<a href= 'index.php' > Atgal </a>";
 
     ?>
 </body>
